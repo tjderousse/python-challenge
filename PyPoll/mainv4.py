@@ -1,23 +1,12 @@
-# python-03-Python/Homework/Instructions/PyPoll/Resources/election_data.
 import os
 import csv
-
-
-
-
-
-
-
-
-
-
-
 
 #choose 1 or 2
 file_num = 1
 
 # Identifies file with poll data
-file = os.path.join('raw_data', 'election_data_' + str(file_num) + '.csv')
+file = os.path.join('Resources/electioin_data.csv'.csv')
+
 
 #Creates dictionary to be used for candidate name and vote count.
 poll = {}
@@ -27,15 +16,15 @@ total_votes = 0
 
 #gets data file
 with open(election_data.csv) as csvfile:
-    csvread = csv.reader(csvfile)
+    reader = csv.reader(csvfile)
 
     #skips header line
-    next(csvread, None)
+    next(reader, None)
 
     #creates dictionary from file using column 3 as keys, using each name only once.
     #counts votes for each candidate as entries
     #keeps a total vote count by counting up 1 for each loop (# of rows w/o header)
-    for row in csvread:
+    for row in reader:
         total_votes += 1
         if row[2] in poll.keys():
             poll[row[2]] = poll[row[2]] + 1
@@ -87,4 +76,6 @@ with open(output_file, 'w') as txtfile:
 
 #prints file to terminal
 with open(output_file, 'r') as readfile:
-print(readfile.read())
+    print(readfile.read())
+
+   

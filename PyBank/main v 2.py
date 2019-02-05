@@ -19,17 +19,16 @@ with open('budget_data.csv') as csvfile:
 
     for row in reader:
         totalmo.append(row[0])
-        #prof.append(str(revall(row[0]))
     
-        bankplbudget[row[0]]=int(row[1]
-    for row in reader
-        if (lastpl)!=0
-        if (int(row[1]))<0 or (lastpl)<0)
-        plchg.append(int(row[1]) + lastpl)
-        elif (int(row[1])>lastpl)
-        plchg.append(int(row[1]) - lastpl)
-        else:
-        plchg.append(lastpl - int(row[1]))
+    
+        bankplbudget[row[0]]=int(row[1])
+        if lastpl!=0: 
+            if int(row[1])<0 or lastpl<0:
+                plchg.append(int(row[1]) + lastpl)
+            elif int(row[1])>lastpl:
+                plchg.append(int(row[1]) - lastpl)
+            else:
+                plchg.append(lastpl - int(row[1]))
         lastpl=(int(row[1]))
         totalallmo =len(totalmo)
         
@@ -39,10 +38,9 @@ with open('budget_data.csv') as csvfile:
 
     #avgchg = sum((plchg)//int(totalallmo)
     
-    prof = (int(row[1]))
+    prof += (int(row[1]))
     revall.append(row[1])
-    
-    print("Total Revenue: " + str(revall))
+    print("Total Revenue: " + str([revall))
     
     #revall += int(row[1])
 
